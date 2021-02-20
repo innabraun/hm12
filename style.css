@@ -1,0 +1,33 @@
+.image-to-show {
+    width: 600px;
+    height: 400px;
+display: none;
+
+}
+
+.image-to-show.active{
+    width: 600px;
+    height: 400px;
+    display: flex;
+
+
+
+
+}
+
+.stop{
+    width: 70px;
+    height: 30px;
+    background-color: indianred;
+    color: white;
+    font-family: Roboto sans-serif;
+    font-size: 24px;
+}
+.start{
+    width: 70px;
+    height: 30px;
+    background-color: indianred;
+    color: white;
+    font-family: Roboto sans-serif;
+    font-size: 24px;
+}
