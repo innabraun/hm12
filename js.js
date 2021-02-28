@@ -3,25 +3,26 @@ const images = document.querySelectorAll(".image-to-show");
 
 let i = 0;
 
-let interval=setInterval(function(){
+function changePhotos(){
 
-    images.forEach( (item, i) => {
+    /*images.forEach( (item, i) => {
        item.classList.remove("active");
-    })
-
+    })*/
+    images[i].classList.remove("active")
+    i++;
 
     if( i === images.length) {
         i = 0;
-
     }
 
     images[i].classList.add("active")
 
-    i++;
-    stop();
-    start();
+}
 
-}, 3000);
+let interval=setInterval ( changePhotos,
+
+
+    1000);
 
 
 let buttons=document.getElementById("menu");
@@ -29,22 +30,26 @@ let buttons=document.getElementById("menu");
 
 buttons.addEventListener("click", (event)=>{
     if (event.target.classList.contains("stop")){
-        function stop() {
-            clearInterval(interval);
-
-        }
+        stop()
 
     }else if  (event.target.classList.contains("start")){
-        function start(){
-
-        }
-
+        start()
     }
 
-    window.stop = stop;
-    window.start = start;
 
 })
+
+
+function stop() {
+    clearInterval(interval);
+
+}
+
+
+function start(){
+    interval= setInterval(changePhotos,1000)
+}
+
 
 
 
